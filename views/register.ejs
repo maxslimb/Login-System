@@ -1,0 +1,155 @@
+<%- include('header',{
+    title:'Signup'
+}); -%>
+
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+</style>
+<div class="container">
+    <h1>Sign Up</h1>
+    <form action="" method="POST">
+        <% if((typeof msg != 'undefined')&&(msg == "std got")){ %>
+            <label for="user_name">Name</label>
+            <input type="text" class="input" name="_name" id="user_name" value="<%=name%>" readonly>
+            <label for="user_rollno">Roll No</label>
+            <input type="text" class="input" name="_roll" id="user_rollno" value="<%=rollno%>" readonly>
+            <label for="user_email">Email</label>
+            <input type="email" class="input" name="_email" id="user_email" value="<%=email%>" readonly>
+            <label for="user_pass">Password</label>
+            <input type="password" class="input" name="_password" id="user_pass" value="<%=pass%>" readonly>
+            <label for="user_standard">Standard</label>
+            <select name="Standard" class="select" id="Standard" >
+                <% if(std[0]==1&&std[1]!=0){ %>
+                    <option value="1st Standard" selected>1st Standard</option>
+                    <% } %>
+                <% if(std[0] == 2){ %>
+                    <option value="2nd Standard" selected>2nd Standard</option>
+                    <% } %>
+                    <% if(std[0] == 3){ %>
+                    <option value="3rd Standard" selected>3rd Standard</option>
+                    <% } %>
+                    <% if(std[0] == 4){ %>
+                    <option value="4th Standard" selected>4th Standard</option>
+                    <% } %>
+                    <% if(std[0] == 5){ %>
+                    <option value="5th Standard" selected>5th Standard</option>
+                    <% } %>
+                    <% if(std[0] == 6){ %>
+                    <option value="6th Standard" selected>6th Standard</option>
+                    <% } %>
+                    <% if(std[0] == 7){ %>
+                    <option value="7th Standard" selected>7th Standard</option>
+                    <% } %>
+                    <% if(std[0] == 8){ %>
+                    <option value="8th Standard" selected>8th Standard</option>
+                    <% } %>
+                    <% if(std[0] == 9){ %>
+                    <option value="9th Standard" selected>9th Standard</option>
+                    <% } %>
+                    <% if(std[0]==1&&std[1]==0){ %>
+                    <option value="10th Standard" selected>10th Standard</option>
+                    <% } %>
+            </select>
+            
+            
+            <% if(typeof std != 'undefined'){ %>
+                <% if(std[0]==1&&std[1]==0){ %>
+                    <% for(var i=1; i<10; i++) {%>
+                        <% if(i>=4){ %>
+                        <label for="user_std"><%=i%>th Standard</label>
+                        <input type="text" class="input" name="_remark<%=i%>" autocomplete="off" id="user_remark" placeholder="Enter remark">
+                        <input type="text" class="input" name="_per<%=i%>" autocomplete="off" id="user_per" placeholder="Enter percentage obtained">
+                        <% } %>  
+                        <% if(i==1){ %>
+                            <label for="user_std"><%=i%>st Standard</label>
+                            <input type="text" class="input" name="_remark<%=i%>" autocomplete="off" id="user_remark" placeholder="Enter remark">
+                            <input type="text" class="input" name="_per<%=i%>" autocomplete="off" id="user_per" placeholder="Enter percentage obtained">
+                            <% } %>  
+                        <% if(i==2){ %>
+                            <label for="user_std"><%=i%>nd Standard</label>
+                            <input type="text" class="input" name="_remark<%=i%>" autocomplete="off" id="user_remark" placeholder="Enter remark">
+                            <input type="text" class="input" name="_per<%=i%>" autocomplete="off" id="user_per" placeholder="Enter percentage obtained">
+                            <% } %>  
+                        <% if(i==3){ %>
+                            <label for="user_std"><%=i%>rd Standard</label>
+                            <input type="text" class="input" name="_remark<%=i%>" autocomplete="off" id="user_remark" placeholder="Enter remark">
+                            <input type="text" class="input" name="_per<%=i%>" autocomplete="off" id="user_per" placeholder="Enter percentage obtained">
+                            <% } %>  
+                        <% } %>
+                        <% } else{ %>  
+                            <% for(var i=1; i<std[0]; i++) {%>
+                                <% if(i>=4){ %>
+                                    <label for="user_std"><%=i%>th Standard</label>
+                                    <input type="text" class="input" name="_remark<%=i%>" autocomplete="off" id="user_remark" placeholder="Enter remark">
+                                    <input type="text" class="input" name="_per<%=i%>" autocomplete="off" id="user_per" placeholder="Enter percentage obtained">
+                                    <% } %>  
+                                <% if(i==1){ %>
+                                    <label for="user_std"><%=i%>st Standard</label>
+                                    <input type="text" class="input" name="_remark<%=i%>" autocomplete="off" id="user_remark" placeholder="Enter remark">
+                                    <input type="text" class="input" name="_per<%=i%>" autocomplete="off" id="user_per" placeholder="Enter percentage obtained">
+                                    <% } %>  
+                                <% if(i==2){ %>
+                                    <label for="user_std"><%=i%>nd Standard</label>
+                                    <input type="text" class="input" name="_remark<%=i%>" autocomplete="off" id="user_remark" placeholder="Enter remark">
+                                    <input type="text" class="input" name="_per<%=i%>" autocomplete="off" id="user_per" placeholder="Enter percentage obtained">
+                                    <% } %>  
+                                <% if(i==3){ %>
+                                    <label for="user_std"><%=i%>rd Standard</label>
+                                    <input type="text" class="input" name="_remark<%=i%>" autocomplete="off" id="user_remark" placeholder="Enter remark">
+                                    <input type="text" class="input" name="_per<%=i%>" autocomplete="off" id="user_per" placeholder="Enter percentage obtained">
+                                    <% } %>  
+                                <% } %>
+                         <% } %>
+                
+                <% } %>
+
+
+            
+                <%if(typeof error !== 'undefined'){ %>
+                <div class="err-msg"><%= error %></div><% } %>
+                <input type="submit" value="Submit">  
+            <% } else{ %>  
+                <label for="user_name">Name</label>
+                <input type="text" class="input" name="_name" autocomplete="off" id="user_name" placeholder="Enter your name">
+                <label for="user_rollno">Roll No</label>
+                <input type="number" class="input" name="_roll" autocomplete="off" id="user_rollno" placeholder="Enter your roll no">
+                <label for="user_email">Email</label>
+                <input type="email" class="input" name="_email" autocomplete="off" id="user_email" placeholder="Enter your email">
+                <label for="user_pass">Password</label>
+                <input type="password" class="input" name="_password" id="user_pass" placeholder="Enter new password">
+                <label for="user_standard">Standard</label>
+                <select name="Standard" class="select" id="Standard">
+                <option value="1st Standard">1st Standard</option>
+                <option value="2nd Standard">2nd Standard</option>
+                <option value="3rd Standard">3rd Standard</option>
+                <option value="4th Standard">4th Standard</option>
+                <option value="5th Standard">5th Standard</option>
+                <option value="6th Standard">6th Standard</option>
+                <option value="7th Standard">7th Standard</option>
+                <option value="8th Standard">8th Standard</option>
+                <option value="9th Standard">9th Standard</option>
+                <option value="10th Standard">10th Standard</option>
+                </select>
+                    
+                    <% if(typeof msg != 'undefined'){ %>
+                    <div class="success-msg"><%= msg %></div><% }
+                     if(typeof error !== 'undefined'){ %>
+                    <div class="err-msg"><%= error %></div><% } %>
+                <input type="submit" value="Next">  
+                    
+             <% } %>
+    
+        <div class="link"><a href="./login">Login</a></div>
+        
+    </form>
+</div>
+
+<%- include('footer'); -%>

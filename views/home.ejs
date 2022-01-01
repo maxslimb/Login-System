@@ -1,0 +1,118 @@
+<%- include('header'); -%>
+<div class="container">
+    <div class="profile">
+        <div class="img">👦</div>
+        <h2><%= user.name %></h2>
+        <span><%= user.email %></span>
+        <span>Roll No: <%= user.rollno %></span>
+        <span><%= user.standard %> </span>
+        <% if(typeof std != 'undefined'){ %>
+            <% if(std[0]==1&&std[1]==0){ %>
+                <% for(var i=1; i<10; i++) {%>
+                
+                    <% if(i==1){ %>
+                        <label for="user_std"><%=i%>st Standard</label>
+                        <input type="text" class="input" name="_remark<%=i%>" value="<%=user.standard_1_remark%>" disabled>
+                        <input type="text" class="input" name="_per<%=i%>" value="<%=user.standard_1_per%>" disabled>
+                        <% } %>  
+                    <% if(i==2){ %>
+                        <label for="user_std"><%=i%>nd Standard</label>
+                        <input type="text" class="input" name="_remark<%=i%>" value="<%=user.standard_2_remark%>" disabled>
+                        <input type="text" class="input" name="_per<%=i%>" value="<%=user.standard_2_per%>" disabled>
+                        <% } %>  
+                    <% if(i==3){ %>
+                        <label for="user_std"><%=i%>rd Standard</label>
+                        <input type="text" class="input" name="_remark<%=i%>" value="<%=user.standard_3_remark%>" disabled>
+                        <input type="text" class="input" name="_per<%=i%>" value="<%=user.standard_3_per%>" disabled>
+                        <% } %>  
+                    <% if(i==4){ %>
+                        <label for="user_std"><%=i%>th Standard</label>
+                        <input type="text" class="input" name="_remark<%=i%>" value="<%=user.standard_4_remark%>" disabled>
+                        <input type="text" class="input" name="_per<%=i%>" value="<%=user.standard_4_per%>" disabled>
+                        <% } %>  
+                    <% if(i==5){ %>
+                        <label for="user_std"><%=i%>th Standard</label>
+                        <input type="text" class="input" name="_remark<%=i%>" value="<%=user.standard_5_remark%>" disabled>
+                        <input type="text" class="input" name="_per<%=i%>" value="<%=user.standard_5_per%>" disabled>
+                        <% } %>  
+                    <% if(i==6){ %>
+                        <label for="user_std"><%=i%>th Standard</label>
+                        <input type="text" class="input" name="_remark<%=i%>" value="<%=user.standard_6_remark%>" disabled>
+                        <input type="text" class="input" name="_per<%=i%>" value="<%=user.standard_6_per%>" disabled>
+                        <% } %>  
+                        <% if(i==7){ %>
+                            <label for="user_std"><%=i%>th Standard</label>
+                            <input type="text" class="input" name="_remark<%=i%>" value="<%=user.standard_7_remark%>" disabled>
+                            <input type="text" class="input" name="_per<%=i%>" value="<%=user.standard_7_per%>" disabled>
+                            <% } %>  
+                            <% if(i==8){ %>
+                                <label for="user_std"><%=i%>th Standard</label>
+                                <input type="text" class="input" name="_remark<%=i%>" value="<%=user.standard_8_remark%>" disabled>
+                                <input type="text" class="input" name="_per<%=i%>" value="<%=user.standard_8_per%>" disabled>
+                                <% } %>  
+                                <% if(i==9){ %>
+                                    <label for="user_std"><%=i%>th Standard</label>
+                                    <input type="text" class="input" name="_remark<%=i%>" value="<%=user.standard_9_remark%>" disabled>
+                                    <input type="text" class="input" name="_per<%=i%>" value="<%=user.standard_9_per%>" disabled>
+                                    <% } %>  
+                                    
+                    <% } %>
+                    <% } else{ %>  
+                        <% for(var i=1; i<std[0]; i++) {%>
+                            
+                            <% if(i==1){ %>
+                                <label for="user_std"><%=i%>st Standard</label> 
+                                <input type="text" class="input" name="_remark<%=i%>" value="<%=user.standard_1_remark%>" disabled>     
+                                <input type="text" class="input" name="_per<%=i%>" value="<%=user.standard_1_per%>" disabled>
+                                <% } %>  
+                            <% if(i==2){ %>
+                                <label for="user_std"><%=i%>nd Standard</label>
+                                <input type="text" class="input" name="_remark<%=i%>" value="<%=user.standard_2_remark%>" disabled>
+                                <input type="text" class="input" name="_per<%=i%>" value="<%=user.standard_2_per%>" disabled>
+                                <% } %>  
+                            <% if(i==3){ %>
+                                <label for="user_std"><%=i%>rd Standard</label>
+                                <input type="text" class="input" name="_remark<%=i%>" value="<%=user.standard_3_remark%>" disabled>
+                                <input type="text" class="input" name="_per<%=i%>" value="<%=user.standard_3_per%>" disabled>
+                                <% } %>  
+                                <% if(i==4){ %>
+                                    <label for="user_std"><%=i%>th Standard</label>
+                                    <input type="text" class="input" name="_remark<%=i%>" value="<%=user.standard_4_remark%>" disabled>
+                                    <input type="text" class="input" name="_per<%=i%>" value="<%=user.standard_4_per%>" disabled>
+                                    <% } %>  
+                                <% if(i==5){ %>
+                                    <label for="user_std"><%=i%>th Standard</label>
+                                    <input type="text" class="input" name="_remark<%=i%>" value="<%=user.standard_5_remark%>" disabled>
+                                    <input type="text" class="input" name="_per<%=i%>" value="<%=user.standard_5_per%>" disabled>
+                                    <% } %>  
+                                <% if(i==6){ %>
+                                    <label for="user_std"><%=i%>th Standard</label>
+                                    <input type="text" class="input" name="_remark<%=i%>" value="<%=user.standard_6_remark%>" disabled>
+                                    <input type="text" class="input" name="_per<%=i%>" value="<%=user.standard_6_per%>" disabled>
+                                    <% } %>  
+                                    <% if(i==7){ %>
+                                        <label for="user_std"><%=i%>th Standard</label>
+                                        <input type="text" class="input" name="_remark<%=i%>" value="<%=user.standard_7_remark%>" disabled>
+                                        <input type="text" class="input" name="_per<%=i%>" value="<%=user.standard_7_per%>" disabled>
+                                        <% } %>  
+                                        <% if(i==8){ %>
+                                            <label for="user_std"><%=i%>th Standard</label>
+                                            <input type="text" class="input" name="_remark<%=i%>" value="<%=user.standard_8_remark%>" disabled>
+                                            <input type="text" class="input" name="_per<%=i%>" value="<%=user.standard_8_per%>" disabled>
+                                            <% } %>  
+                                            <% if(i==9){ %>
+                                                <label for="user_std"><%=i%>th Standard</label>
+                                                <input type="text" class="input" name="_remark<%=i%>" value="<%=user.standard_9_remark%>" disabled>
+                                                <input type="text" class="input" name="_per<%=i%>" value="<%=user.standard_9_per%>" disabled>
+                                                <% } %>  
+                                                
+                            <% } %>
+                     <% } %>
+            
+            <% } %>
+
+
+        <a href="/logout">Log Out</a>
+    </div>
+</div>
+<%- include('footer'); -%>
